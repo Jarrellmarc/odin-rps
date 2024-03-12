@@ -49,6 +49,28 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-const playerSelect = getPlayerChoice();
-const computerSelect = getComputerChoice();
-console.log(playRound(computerSelect, playerSelect));
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let win = "Win";
+    let lose = "Lose";
+    let tie = "Tie";
+    for (i = 0; i < 5; i++) {
+        const playerSelect = getPlayerChoice();
+        const computerSelect = getComputerChoice();
+        let result = playRound(computerSelect, playerSelect);
+        console.log(result)
+            if (result.includes(win) == true) {
+                playerScore += 1;
+            }
+            else if (result.includes(lose)== true) {
+                computerScore += 1;
+            }
+            else if (result.includes(tie) == true) {
+                continue
+            }
+    }
+    return "Player: " + playerScore + " Computer: " + computerScore 
+}
+
+console.log(playGame());
