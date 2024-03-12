@@ -66,9 +66,6 @@ function playGame() {
             else if (result.includes(lose)== true) {
                 computerScore += 1;
             }
-            else if (result.includes(tie) == true) {
-                continue
-            }
     }
     return "Player: " + playerScore + " Computer: " + computerScore 
 }
